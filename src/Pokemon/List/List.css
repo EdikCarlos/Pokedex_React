@@ -1,0 +1,52 @@
+.pokeList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list_title {
+  color: white;
+}
+
+label {
+  color: white;
+  font-size: 28px;
+  margin-right: 20px;
+}
+
+input {
+  width: 600px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.pokeLink {
+  color: #c495f0;
+  text-decoration: none;
+  font-size: 18px;
+  text-transform: capitalize;
+  border: 2px #c495f0 solid;
+  display: block;
+  padding: 15px 10px;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+.pokeLink:hover {
+  background-color: #4d1a7f;
+  color: #fff;
+  transition: 0.5s;
+  border-color: #fff;
+  padding: 20px 15px;
+  font-size: 22px;
+}
+
+.pokeInfo {
+  float: right;
+  font-size: 12px;
+  float: right;
+  background-color: #15c815;
+  color: #000;
+  text-transform: uppercase;
+  padding: 5px;
+  border-radius: 5px;
+}
