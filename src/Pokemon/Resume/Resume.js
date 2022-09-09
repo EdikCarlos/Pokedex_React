@@ -1,18 +1,21 @@
 import React from 'react';
 import './Resume.css';
 import { useParams, Link } from 'react-router-dom';
+import AppContext from '../../AppContext/Context';
 
 const Resume = () => {
   const [pokemon, setPokemon] = React.useState(null);
   const { name } = useParams();
+  const { setIntoPokedex } = React.useContext(AppContext);
 
   React.useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
       .then((res) => res.json())
       .then((Pokemonjson) => {
         setPokemon(Pokemonjson);
+        setIntoPokedex(Pokemonjson);
       });
-  }, [name]);
+  }, [name, setIntoPokedex]);
   if (!pokemon) {
     return null;
   }
