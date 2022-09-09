@@ -1,0 +1,42 @@
+.resume_container {
+  width: 250px;
+  border: 1px solid #fff;
+  padding: 20px;
+  margin: 10px auto;
+  min-width: 200px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.resume_name {
+  color: #000;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.resume_img {
+  width: 180px;
+}
+
+.resume_type {
+  margin: 0 auto;
+  text-transform: capitalize;
+}
+
+.resume_list {
+  list-style: none;
+  display: contents;
+}
+
+.resume_list li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.resume_button {
+  width: 80%;
+  height: 30px;
+  cursor: pointer;
+}
