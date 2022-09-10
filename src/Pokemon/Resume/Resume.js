@@ -20,6 +20,7 @@ const Resume = () => {
     return null;
   }
 
+  // Recebe o tipo do pokemon e permite através dele definir uma cor específica
   const pokeType = pokemon.types[0].type.name;
   let typeColor = '';
   switch (pokeType) {

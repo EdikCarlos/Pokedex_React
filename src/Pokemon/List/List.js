@@ -8,12 +8,14 @@ const List = () => {
   const [search, setSearch] = React.useState('');
   const { user } = React.useContext(AppContext);
 
+  //Recebendo API com 151 pokemons
   React.useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
       .then((res) => res.json())
       .then((json) => setPokemons(json.results));
   }, []);
 
+  //Filtro para trazer todos os Pokemons e que permite eles serem encontrados pelo inicio de seu nome
   const filteredPokemon = pokemons.filter((pokemon) =>
     pokemon.name.toString().startsWith(search.toLowerCase()),
   );
@@ -21,20 +23,17 @@ const List = () => {
   return (
     <div>
       <h1 className="list_title">Lista de Pokemons</h1>
-      <label htmlFor="">Filtrar:</label>
+      <label htmlFor="filter">Filtrar:</label>
       <input
         type="text"
+        id="filter"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
       <p style={{ color: '#fff' }}>
-        Pokémons visualizados: {Object.keys(user.pokedex).length}/151.
+        Pokemons visualizados:{' '}
+        {user.pokedex && Object.keys(user.pokedex).length}/151.
       </p>
-      {Object.keys(user.pokedex).length === 151 && (
-        <p style={{ color: 'yellow' }}>
-          Parabéns, você viu todos os Pokemons!!!
-        </p>
-      )}
       <ul className="pokeList">
         {pokemons &&
           filteredPokemon.map(({ name }) => (
